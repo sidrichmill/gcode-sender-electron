@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html class="no-js" lang="">
+  <head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link rel="stylesheet" href="styles.css" />
+    <meta name="theme-color" content="#fafafa" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <p id="error"></p>
+    <div id="titleDiv">
+      <span id="title">Film Transport Control</span>
+    </div>
+    <div id="container">
+      <div id="outDiv">
+        <textarea id="term_window" readonly></textarea>
+      </div>
+      <div id="inDiv">
+        <textarea id="term_input"></textarea>
+        <button class="button" id="send" disabled>Send</button>
+        <button class="button" id="clear" disabled>Clear</button>
+      </div>
+      <div id="setDiv">
+        <select id="serial_port" disabled></select>
+        <button id="port_refresh">Refresh</button>
+       
+        <div id="baud_div">
+          <span>Baud Rate: </span>
+          <select id="baud_rate">
+            <option value="9600">9600</option>
+            <option value="19200">19200</option>
+            <option value="38400">38400</option>
+            <option value="57600">57600</option>
+            <option value="115200">115200</option>
+            <option value="250000">250000</option></select> 
+          <button class="button" id="openclose_port" >Open</button>
+          <button class="button" id="change" disabled>Change</button>
+        </div>
+        <span id="port_info">Disconnected</span>
+
+      </div>
+      <div id="buttonWrapper">
+        <button class="button" id="BBB" data-cmd="G1 X20"><<<</button>
+        <button class="button" id="BB" data-cmd="G1 X10"><<</button>
+        <button class="button" id="B" data-cmd="G1 X5"><</button>
+        <button class="button" data-cmd="P000">⏸</button>
+        <button class="button" data-cmd="R000">⏵</button>
+        <button class="button" id="F" data-cmd="G1 X-5">></button>
+        <button class="button" id="FF" data-cmd="G1 X-10">>></button>
+        <button class="button" class="button" id="fwd" data-cmd="G1 X-20">
+          >>>
+        </button>
+      </div>
+    </div>
+
+    
+    
+    <!-- You can also require other files to run in this process -->
+    <script src="./renderer.js"></script>
+  </body>
+</html>
